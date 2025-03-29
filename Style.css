@@ -1,0 +1,79 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 0;
+}
+
+.Section_Container {
+  background-color: hsl(7, 20%, 60%);
+}
+
+.Side_Container {
+  background-color: hsl(7, 20%, 60%);
+}
+
+#Your_Cart {
+  background-color: white;
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 70px;
+  border-radius: 10px;
+  height: 250px;
+}
+
+#Picture_Frame {
+  margin-left: 50px;
+}
+
+.Food_Pics {
+  width: 200px;
+  border-radius: 5px;
+}
+
+/* #Picture_Collage {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 25px;
+  } */
+#Picture_Collage {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.Click_Button {
+  position: absolute;
+  top: 175px;
+  left: 50px;
+  /* top: 890px; */
+}
+
+.Card {
+  position: relative;
+}
+
+.Card_First_Heading {
+  position: relative;
+  bottom: 15px;
+}
+
+.Cost {
+  position: relative;
+  bottom: 28px;
+}
