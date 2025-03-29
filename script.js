@@ -8,6 +8,11 @@ async function Getdata() {
 
 data = Getdata();
 console.log(data);
+let array;
+
+data.then(console.log(data)).catch();
+
+//console.log(array[0]);
 
 //to pass parameter we need to use concept of anonymous functions here
 
