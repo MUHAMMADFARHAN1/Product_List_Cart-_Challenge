@@ -70,6 +70,17 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
       }
+
+      .Click_Button {
+        position: absolute;
+        top: 175px;
+        left: 50px;
+        /* top: 890px; */
+      }
+
+      .Card {
+        position: relative;
+      }
     </style>
   </head>
   <body>
@@ -77,7 +88,7 @@
       <div id="Picture_Frame">
         <h1>Desserts</h1>
         <div id="Picture_Collage">
-          <div id="Waffle">
+          <div id="Waffle" class="Card">
             <img
               src="./assets/images/image-waffle-desktop.jpg"
               alt=""
@@ -85,7 +96,7 @@
             />
             <p>Waffle</p>
             <h4>Waffle with Berries</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -107,11 +118,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Crème_Brûlée">
+          <div id="Crème_Brûlée" class="Card">
             <img
               src="./assets/images/image-creme-brulee-desktop.jpg"
               alt=""
@@ -119,7 +139,7 @@
             />
             <p>Crème Brûlée</p>
             <h4>Vanilla Bean Crème Brûlée</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -141,11 +161,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Macaron">
+          <div id="Macaron" class="Card">
             <img
               src="./assets/images/image-macaron-desktop.jpg"
               alt=""
@@ -153,7 +182,7 @@
             />
             <p>Macaron</p>
             <h4>Macaron Mix of Five</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -175,11 +204,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Tiramisu">
+          <div id="Tiramisu" class="Card">
             <img
               src="./assets/images/image-tiramisu-desktop.jpg"
               alt=""
@@ -187,7 +225,7 @@
             />
             <p>Tiramisu</p>
             <h4>Classic Tiramisu</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -209,11 +247,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Baklava">
+          <div id="Baklava" class="Card">
             <img
               src="./assets/images/image-baklava-desktop.jpg"
               alt=""
@@ -221,7 +268,7 @@
             />
             <p>Baklava</p>
             <h4>Pistachio Baklava</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -243,11 +290,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Pie">
+          <div id="Pie" class="Card">
             <img
               src="./assets/images/image-meringue-desktop.jpg"
               alt=""
@@ -255,7 +311,7 @@
             />
             <p>Pie</p>
             <h4>Lemon Meringue Pie</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -277,11 +333,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Cake">
+          <div id="Cake" class="Card">
             <img
               src="./assets/images/image-cake-desktop.jpg"
               alt=""
@@ -289,7 +354,7 @@
             />
             <p>Cake</p>
             <h4>Red Velvet Cake</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -311,11 +376,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Brownie">
+          <div id="Brownie" class="Card">
             <img
               src="./assets/images/image-brownie-desktop.jpg"
               alt=""
@@ -323,7 +397,7 @@
             />
             <p>Brownie</p>
             <h4>Salted Caramel Brownie</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -345,11 +419,20 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
-          <div id="Panna_Cotta">
+          <div id="Panna_Cotta" class="Card">
             <img
               src="./assets/images/image-panna-cotta-desktop.jpg"
               alt=""
@@ -357,7 +440,7 @@
             />
             <p>Panna Cotta</p>
             <h4>Vanilla Panna Cotta</h4>
-            <button>
+            <button class="Click_Button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -379,7 +462,16 @@
                   </clipPath>
                 </defs>
               </svg>
-              <p style="display: inline; margin-bottom: 15px;">Add to Cart</p>
+              <p
+                style="
+                  display: inline;
+                  position: relative;
+                  bottom: 4px;
+                  left: 3px;
+                "
+              >
+                Add to Cart
+              </p>
             </button>
             <p>Price</p>
           </div>
