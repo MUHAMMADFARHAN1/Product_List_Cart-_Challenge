@@ -19,15 +19,16 @@ body {
 }
 
 .Section_Container {
-  background-color: hsl(7, 20%, 60%);
+  background-color: hsl(13, 31%, 94%);
+  padding-top: 30px;
 }
 
 .Side_Container {
-  background-color: hsl(7, 20%, 60%);
+  background-color: hsl(13, 31%, 94%);
 }
 
 #Your_Cart {
-  background-color: white;
+  background-color: hsl(20, 50%, 98%);
   width: 80%;
   margin-left: 10px;
   margin-top: 70px;
@@ -77,4 +78,6 @@ body {
 .Cost {
   position: relative;
   bottom: 28px;
+  color: hsl(14, 86%, 42%);
+  font-weight: bold;
 }
