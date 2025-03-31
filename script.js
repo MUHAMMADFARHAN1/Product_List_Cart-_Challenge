@@ -1,3 +1,15 @@
+//Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects 
+
+//////Fetch Operation//////////////
+
+//////Variables///////////////////
+
+//////HTML CSS Templates////////////
+
+///////Event Loop////////////////////
+
+//////Auxillary Functions////////////
+
 let data;
 
 async function Getdata() {

@@ -1,0 +1,15 @@
+Data Fetching:
+1. The code needs to have two way relation with the json file (i,e current status needs to be saved on json)
+
+
+
+DOM maipulations:
+1. Simple hover effect to change the colour and border of the button needs to be created.
+2. On Clicking, the display needs to change to allow +,- and number.
+3. Cart number need to change dynamically.
+4. Empty picture needs to be changed
+
+
+Cost functions:
+1. Function to create total number of items.
+2. Function to caculate the total cost.
