@@ -10,6 +10,8 @@
 
 //////Auxillary Functions////////////
 
+// In Javascript, we will use objects to manage program state (I.e promises) and also the state of components like cart here
+
 let data;
 
 async function Getdata() {
