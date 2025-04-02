@@ -26,6 +26,9 @@ const getData = async () => {
 })();
 
 /////////////////////////////////////////////////////////////////////////////Auxillary Functions///////////////////////////////////////////////////////////
+//This function will retrieve all the selectors
+const get_selectors = () => {};
+
 // This function will change the cost as per JSON
 const cost_calc = () => {};
 
@@ -37,9 +40,6 @@ const Sub_head = () => {};
 
 //This function will update the images
 const img_up = () => {};
-
-//This function will retrieve all the selectors
-const get_selectors = () => {};
 
 //This function will update the number of items in the main cart
 
