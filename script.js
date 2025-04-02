@@ -1,28 +1,53 @@
-//Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects 
+//Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects
 
 //////Fetch Operation//////////////
 
-//////Variables///////////////////
+let dataGlobal;
 
-//////HTML CSS Templates////////////
-
-///////Event Loop////////////////////
-
-//////Auxillary Functions////////////
-
-let data;
-
-async function Getdata() {
-  let response = await fetch("./data.json");
-  data = await response.json();
+const getData = async () => {
+  const response = await fetch("./data.json");
+  const data = await response.json();
+  dataGlobal = data;
   return data;
-}
+};
 
-data = Getdata();
-console.log(data);
-let array;
+///////////////////////////////////////////////////////////////////////////////Variables/////////////////////////////////////////////////////////////////////
 
-data.then(console.log(data)).catch();
+////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
+
+//Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+// The event loop will use this asynchronous function for all operations
+(async () => {
+  await getData();
+  console.log(dataGlobal);
+  //Most of program logic will go here
+})();
+
+/////////////////////////////////////////////////////////////////////////////Auxillary Functions///////////////////////////////////////////////////////////
+// This function will change the cost as per JSON
+const cost_calc = () => {};
+
+//This function will update the Main Heading
+const Main_head = () => {};
+
+//This function will update the Small Heading
+const Sub_head = () => {};
+
+//This function will update the images
+const img_up = () => {};
+
+//This function will retrieve all the selectors
+const get_selectors = () => {};
+
+//This function will update the number of items in the main cart
+
+//This function will trigger the event detection on the buttons
+
+//This function will add the items onto the cart  or increase them
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //console.log(array[0]);
 
@@ -44,7 +69,7 @@ data.then(console.log(data)).catch();
 //   Brownie: 0,
 //   Panna: 0,
 // };
-let quatity = [1, 0, 0, 0, 0, 0, 0, 0, 0];
+// let quatity = [1, 0, 0, 0, 0, 0, 0, 0, 0];
 
 const change_button = (CartButton) => {
   for (let button of CartButton) {
@@ -68,8 +93,8 @@ const change_button = (CartButton) => {
   }
 };
 
-let CartButton = document.querySelectorAll(".Click_Button");
-change_button(CartButton);
+// let CartButton = document.querySelectorAll(".Click_Button");
+// change_button(CartButton);
 
 /*
  button.innerHTML = "
