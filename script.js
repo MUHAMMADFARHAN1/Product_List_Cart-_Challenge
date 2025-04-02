@@ -12,7 +12,14 @@ const getData = async () => {
 };
 
 ///////////////////////////////////////////////////////////////////////////////Variables/////////////////////////////////////////////////////////////////////
+let cost;
+let main_heading;
+let sub_heading;
+let images;
+let Cart_Count;
 
+//This array will hold all the objects representing each image
+let Cart_Items = [];
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
@@ -29,6 +36,10 @@ const getData = async () => {
 //This function will retrieve all the selectors
 const get_selectors = () => {};
 
+//This function will populate the cart array with data retrieved from Json
+//It will also add a new field of quantity in the array generated
+const Cart_Array_Update = () => {};
+
 // This function will change the cost as per JSON
 const cost_calc = () => {};
 
@@ -42,10 +53,16 @@ const Sub_head = () => {};
 const img_up = () => {};
 
 //This function will update the number of items in the main cart
+const Cart_Number = () => {};
 
 //This function will trigger the event detection on the buttons
+const Button_Detection = () => {};
 
-//This function will add the items onto the cart  or increase them
+//This function will add the items onto the cart or increase them
+const Update_Cart = () => {};
+
+//This function will show the checkout screen on pressing confirm button
+const Check_out = () => {};
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
