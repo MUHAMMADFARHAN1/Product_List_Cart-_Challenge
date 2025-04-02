@@ -4,26 +4,10 @@
 
 let dataGlobal;
 
-<<<<<<< HEAD
 const getData = async () => {
   const response = await fetch("./data.json");
   const data = await response.json();
   dataGlobal = data;
-=======
-//////HTML CSS Templates////////////
-
-///////Event Loop////////////////////
-
-//////Auxillary Functions////////////
-
-// In Javascript, we will use objects to manage program state (I.e promises) and also the state of components like cart here
-
-let data;
-
-async function Getdata() {
-  let response = await fetch("./data.json");
-  data = await response.json();
->>>>>>> 5faa50d65a011fc94eec8dcc8f3ed42e26cf0d6b
   return data;
 };
 
