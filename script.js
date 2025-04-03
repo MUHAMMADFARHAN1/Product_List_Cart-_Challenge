@@ -38,6 +38,7 @@ const get_selectors = () => {};
 
 //This function will populate the cart array with data retrieved from Json
 //It will also add a new field of quantity in the array generated
+// The following four functions can be nested in it as well
 const Cart_Array_Update = () => {};
 
 // This function will change the cost as per JSON
