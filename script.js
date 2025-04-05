@@ -20,7 +20,49 @@ let Cart_Count;
 //This array will hold all the objects representing each image
 let Cart_Items = [];
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
-let 
+let cost_tab = `<div
+style="
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  background-color: hsl(20, 50%, 98%);
+"
+>
+<div>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      padding-left: 15px;
+      background-color: hsl(20, 50%, 98%);
+    "
+  >
+    <div>
+      <p>Classic Tiramisu</p>
+      <p style="margin-top: -10px">Cost</p>
+    </div>
+    <p style="margin-left: 100px">Cross</p>
+  </div>
+  <hr style="width: 290px; margin-top: -5px" />
+</div>
+<div>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      padding-left: 15px;
+      background-color: hsl(20, 50%, 98%);
+    "
+  >
+    <div>
+      <p>Classic Tiramisu</p>
+      <p style="margin-top: -10px">Cost</p>
+    </div>
+    <p style="margin-left: 100px">Cross</p>
+  </div>
+  <hr style="width: 290px; margin-top: -5px" />
+</div>
+</div>`;
 
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
