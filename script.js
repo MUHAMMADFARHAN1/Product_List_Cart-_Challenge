@@ -1,5 +1,4 @@
 //Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects
-
 //////Fetch Operation//////////////
 let dataGlobal;
 
@@ -11,15 +10,31 @@ const getData = async () => {
 };
 
 ///////////////////////////////////////////////////////////////////////////////Variables/////////////////////////////////////////////////////////////////////
+
+////The Selectors of the collage
+//The selector to hold cost of each item
 let cost;
+// the selector to hold the main heading
 let main_heading;
+//The selector to hold the sub-heading
 let sub_heading;
+//The selector to hold the images
 let images;
+//The selector to hold the Cart buttons
+let CartButtons;
+
+////Your Cart Selectors
+//The selector to hold total items
 let Cart_Count;
 
 //This array will hold all the objects representing each image
 let Cart_Items = [];
 
+//This number represents the total nuber of items in the cart
+let total = 0;
+
+//This number is used to manage the tab states
+let number;
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
 //Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -30,6 +45,7 @@ let Cart_Items = [];
   get_selectors();
   Cart_Array_Update();
   Cart_Number();
+  Cart_Empty();
 
   //Most of program logic will go here
 })();
@@ -42,11 +58,11 @@ const get_selectors = () => {
   sub_heading = document.querySelectorAll(".title");
   images = document.querySelectorAll(".Food_Pics");
   Cart_Count = document.querySelectorAll("#Cart_Num");
+  CartButtons = document.querySelectorAll(".Click_Button");
 };
 
 //This function will update the number of items in the main cart
 const Cart_Number = () => {
-  let total = 0;
   for (let index = 0; index < dataGlobal.length; index++) {
     total += dataGlobal[index].quantity;
   }
@@ -62,8 +78,21 @@ const Update_Cart = () => {};
 //This function will show the checkout screen on pressing confirm button
 const Check_out = () => {};
 
-///////////////////////////////////Cart Operations///////////////////////////////////////////////////////
-const 
+///////////////////////////////////Cart Operations and State Management///////////////////////////////////////////////////////
+// This function will make the card division empty if number of items is zero
+//https://www.w3schools.com/js/js_htmldom_nodes.asp from here syntax and notes
+const Cart_Empty = () => {
+  let cart_children = document.getElementById("Empty_Cart");
+  cart_children.style.display = "none";
+  let cart_text = document.getElementById("Empty_Display");
+  cart_text.style.display = "none";
+
+  // cart_text.remove();
+  // cart_children.remove();
+};
+
+//This function will add the first tab in the cart
+const Cart_init = () => {};
 
 ////////////////////////////////Page update with JSON template/////////////////////////////////////////
 
@@ -115,8 +144,9 @@ const add_quantity = () => {
 };
 
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
+// Ways of appending template string ina text: https://stackoverflow.com/questions/54618582/appending-a-template-string
 
-//This template contains main flexbox with a cloumn display to be used
+//This template contains main flexbox with a column display to be used
 let cost_tab = `<div
 style="
   display: flex;
@@ -191,32 +221,7 @@ const Template_Confirmation = `<div style="display: flex; flex-direction: row; p
 </button>
 </div>`;
 
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//console.log(array[0]);
-
-// function changeDisplay(button) {
-//   //button.style.backgroundcolor = "red";
-//   button.style.backgroundColor = "green";
-//   button.innerHTML = "Check";
-// }
-// let quatity = {
-//   Waffle: 0,
-//   Brûlée: 0,
-//   Macaron: 0,
-//   Tiramisu: 0,
-//   Baklava: 0,
-//   Pie: 0,
-//   Cake: 0,
-//   Brownie: 0,
-//   Panna: 0,
-// };
-// let quatity = [1, 0, 0, 0, 0, 0, 0, 0, 0];
 
 const change_button = (CartButton) => {
   for (let button of CartButton) {
@@ -259,3 +264,25 @@ Notes:
 //to pass parameter we need to use concept of anonymous functions here
 
 */
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//console.log(array[0]);
+
+// function changeDisplay(button) {
+//   //button.style.backgroundcolor = "red";
+//   button.style.backgroundColor = "green";
+//   button.innerHTML = "Check";
+// }
+// let quatity = {
+//   Waffle: 0,
+//   Brûlée: 0,
+//   Macaron: 0,
+//   Tiramisu: 0,
+//   Baklava: 0,
+//   Pie: 0,
+//   Cake: 0,
+//   Brownie: 0,
+//   Panna: 0,
+// };
+// let quatity = [1, 0, 0, 0, 0, 0, 0, 0, 0];
