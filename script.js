@@ -20,6 +20,8 @@ let Cart_Count;
 //This array will hold all the objects representing each image
 let Cart_Items = [];
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
+
+//This template contains main flexbox with a cloumn display to be used
 let cost_tab = `<div
 style="
   display: flex;
@@ -28,32 +30,8 @@ style="
   background-color: hsl(20, 50%, 98%);
 "
 >
-<div>
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      padding-left: 15px;
-      background-color: hsl(20, 50%, 98%);
-    "
-  >
-    <div>
-      <p>Classic Tiramisu</p>
-      <p style="margin-top: -10px">Cost</p>
-    </div>
-    <p style="margin-left: 100px">Cross</p>
-  </div>
-  <hr style="width: 290px; margin-top: -5px" />
-</div>
-<div>
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      padding-left: 15px;
-      background-color: hsl(20, 50%, 98%);
-    "
-  >
+<div id="tab_${number}">
+  <div style="display: flex; flex-direction: row; padding-left: 15px">
     <div>
       <p>Classic Tiramisu</p>
       <p style="margin-top: -10px">Cost</p>
@@ -64,6 +42,59 @@ style="
 </div>
 </div>`;
 
+//This template contains additional tabs which can be populated as per need
+const Additional_Tab = `<div id="tab_${number}">
+<div style="display: flex; flex-direction: row; padding-left: 15px">
+  <div>
+    <p>Classic Tiramisu</p>
+    <p style="margin-top: -10px">Cost</p>
+  </div>
+  <p style="margin-left: 100px">Cross</p>
+</div>
+<hr style="width: 290px; margin-top: -5px" />
+</div>`;
+
+//This template contains Total cost, neutral delievery and Confirmation button
+const Template_Confirmation = `<div style="display: flex; flex-direction: row; padding-left: 15px">
+<p>Cost</p>
+<p style="margin-left: 180px" id="Total_Cost">Dollar</p>
+</div>
+<div style="padding-left: 15px; margin-top: -15px">
+<p style="background-color: hsl(13, 31%, 94%); margin-right: 25px">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="21"
+    height="20"
+    fill="none"
+    viewBox="0 0 21 20"
+  >
+    <path
+      fill="#1EA575"
+      d="M8 18.75H6.125V17.5H8V9.729L5.803 8.41l.644-1.072 2.196 1.318a1.256 1.256 0 0 1 .607 1.072V17.5A1.25 1.25 0 0 1 8 18.75Z"
+    />
+    <path
+      fill="#1EA575"
+      d="M14.25 18.75h-1.875a1.25 1.25 0 0 1-1.25-1.25v-6.875h3.75a2.498 2.498 0 0 0 2.488-2.747 2.594 2.594 0 0 0-2.622-2.253h-.99l-.11-.487C13.283 3.56 11.769 2.5 9.875 2.5a3.762 3.762 0 0 0-3.4 2.179l-.194.417-.54-.072A1.876 1.876 0 0 0 5.5 5a2.5 2.5 0 1 0 0 5v1.25a3.75 3.75 0 0 1 0-7.5h.05a5.019 5.019 0 0 1 4.325-2.5c2.3 0 4.182 1.236 4.845 3.125h.02a3.852 3.852 0 0 1 3.868 3.384 3.75 3.75 0 0 1-3.733 4.116h-2.5V17.5h1.875v1.25Z"
+    />
+  </svg>
+  This is a carbon neutral delievery.
+</p>
+</div>
+<div style="padding: 20px">
+<button
+  style="
+    padding: 15px 80px 15px 80px;
+    margin-left: 15px;
+    border-radius: 30px;
+    background-color: hsl(14, 86%, 42%);
+    border-color: hsl(14, 86%, 42%);
+    color: white;
+    box-shadow: none;
+  "
+>
+  Confirmation
+</button>
+</div>`;
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
 //Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -71,16 +102,9 @@ style="
 (async () => {
   await getData();
   console.log(dataGlobal);
-  add_quantity();
   get_selectors();
-  // console.log(cost);
-  // console.log(main_heading);
-  // console.log(sub_heading);
-  console.log(images);
-  img_up();
-  console.log(images);
-  cost_calc();
-  //  console.log(Cart_Count);;
+  Cart_Array_Update();
+  Cart_Number();
 
   //Most of program logic will go here
 })();
@@ -92,13 +116,39 @@ const get_selectors = () => {
   main_heading = document.querySelectorAll(".Card_First_Heading");
   sub_heading = document.querySelectorAll(".title");
   images = document.querySelectorAll(".Food_Pics");
-  Cart_Count = document.querySelectorAll("#Your_Cart");
+  Cart_Count = document.querySelectorAll("#Cart_Num");
 };
+
+//This function will update the number of items in the main cart
+const Cart_Number = () => {
+  let total = 0;
+  for (let index = 0; index < dataGlobal.length; index++) {
+    total += dataGlobal[index].quantity;
+  }
+  Cart_Num.innerHTML = `Your Cart&nbsp(${total})`;
+};
+
+//This function will trigger the event detection on the buttons
+const Button_Detection = () => {};
+
+//This function will add the items onto the cart or increase them
+const Update_Cart = () => {};
+
+//This function will show the checkout screen on pressing confirm button
+const Check_out = () => {};
+
+////////////////////////////////Page update with JSON template/////////////////////////////////////////
 
 //This function will populate the cart array with data retrieved from Json
 //It will also add a new field of quantity in the array generated
 // The following four functions can be nested in it as well
-const Cart_Array_Update = () => {};
+const Cart_Array_Update = () => {
+  add_quantity();
+  cost_calc();
+  Main_head();
+  Sub_head();
+  img_up();
+};
 
 // This function will change the cost as per JSON
 const cost_calc = () => {
@@ -128,18 +178,6 @@ const img_up = () => {
     images[index].src = dataGlobal[index].image.desktop;
   }
 };
-
-//This function will update the number of items in the main cart
-const Cart_Number = () => {};
-
-//This function will trigger the event detection on the buttons
-const Button_Detection = () => {};
-
-//This function will add the items onto the cart or increase them
-const Update_Cart = () => {};
-
-//This function will show the checkout screen on pressing confirm button
-const Check_out = () => {};
 
 //This function will append quantity field to the existing objects
 const add_quantity = () => {
