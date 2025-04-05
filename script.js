@@ -19,6 +19,101 @@ let Cart_Count;
 
 //This array will hold all the objects representing each image
 let Cart_Items = [];
+
+/////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
+
+//Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+// The event loop will use this asynchronous function for all operations
+(async () => {
+  await getData();
+  console.log(dataGlobal);
+  get_selectors();
+  Cart_Array_Update();
+  Cart_Number();
+
+  //Most of program logic will go here
+})();
+
+/////////////////////////////////////////////////////////////////////////////Auxillary Functions///////////////////////////////////////////////////////////
+//This function will retrieve all the selectors
+const get_selectors = () => {
+  cost = document.querySelectorAll(".Cost");
+  main_heading = document.querySelectorAll(".Card_First_Heading");
+  sub_heading = document.querySelectorAll(".title");
+  images = document.querySelectorAll(".Food_Pics");
+  Cart_Count = document.querySelectorAll("#Cart_Num");
+};
+
+//This function will update the number of items in the main cart
+const Cart_Number = () => {
+  let total = 0;
+  for (let index = 0; index < dataGlobal.length; index++) {
+    total += dataGlobal[index].quantity;
+  }
+  Cart_Num.innerHTML = `Your Cart&nbsp(${total})`;
+};
+
+//This function will trigger the event detection on the buttons
+const Button_Detection = () => {};
+
+//This function will add the items onto the cart or increase them
+const Update_Cart = () => {};
+
+//This function will show the checkout screen on pressing confirm button
+const Check_out = () => {};
+
+///////////////////////////////////Cart Operations///////////////////////////////////////////////////////
+const 
+
+////////////////////////////////Page update with JSON template/////////////////////////////////////////
+
+//This function will populate the cart array with data retrieved from Json
+//It will also add a new field of quantity in the array generated
+// The following four functions can be nested in it as well
+const Cart_Array_Update = () => {
+  add_quantity();
+  cost_calc();
+  Main_head();
+  Sub_head();
+  img_up();
+};
+
+// This function will change the cost as per JSON
+const cost_calc = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    //We need to put if condition here with modulo operator
+    cost[index].innerHTML = `$${dataGlobal[index].price}`;
+  }
+};
+
+//This function will update the Main Heading
+const Main_head = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    main_heading[index].innerHTML = dataGlobal[index].category;
+  }
+};
+
+//This function will update the Small Heading
+const Sub_head = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    sub_heading[index].innerHTML = dataGlobal[index].name;
+  }
+};
+
+//This function will update the images as extracted from the object
+const img_up = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    images[index].src = dataGlobal[index].image.desktop;
+  }
+};
+
+//This function will append quantity field to the existing objects
+const add_quantity = () => {
+  dataGlobal.forEach((number) => {
+    number.quantity = 0;
+  });
+};
+
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
 
 //This template contains main flexbox with a cloumn display to be used
@@ -95,96 +190,11 @@ const Template_Confirmation = `<div style="display: flex; flex-direction: row; p
   Confirmation
 </button>
 </div>`;
-/////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
-//Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
-// The event loop will use this asynchronous function for all operations
-(async () => {
-  await getData();
-  console.log(dataGlobal);
-  get_selectors();
-  Cart_Array_Update();
-  Cart_Number();
 
-  //Most of program logic will go here
-})();
 
-/////////////////////////////////////////////////////////////////////////////Auxillary Functions///////////////////////////////////////////////////////////
-//This function will retrieve all the selectors
-const get_selectors = () => {
-  cost = document.querySelectorAll(".Cost");
-  main_heading = document.querySelectorAll(".Card_First_Heading");
-  sub_heading = document.querySelectorAll(".title");
-  images = document.querySelectorAll(".Food_Pics");
-  Cart_Count = document.querySelectorAll("#Cart_Num");
-};
 
-//This function will update the number of items in the main cart
-const Cart_Number = () => {
-  let total = 0;
-  for (let index = 0; index < dataGlobal.length; index++) {
-    total += dataGlobal[index].quantity;
-  }
-  Cart_Num.innerHTML = `Your Cart&nbsp(${total})`;
-};
 
-//This function will trigger the event detection on the buttons
-const Button_Detection = () => {};
-
-//This function will add the items onto the cart or increase them
-const Update_Cart = () => {};
-
-//This function will show the checkout screen on pressing confirm button
-const Check_out = () => {};
-
-////////////////////////////////Page update with JSON template/////////////////////////////////////////
-
-//This function will populate the cart array with data retrieved from Json
-//It will also add a new field of quantity in the array generated
-// The following four functions can be nested in it as well
-const Cart_Array_Update = () => {
-  add_quantity();
-  cost_calc();
-  Main_head();
-  Sub_head();
-  img_up();
-};
-
-// This function will change the cost as per JSON
-const cost_calc = () => {
-  for (let index = 0; index < dataGlobal.length; index++) {
-    //We need to put if condition here with modulo operator
-    cost[index].innerHTML = `$${dataGlobal[index].price}`;
-  }
-};
-
-//This function will update the Main Heading
-const Main_head = () => {
-  for (let index = 0; index < dataGlobal.length; index++) {
-    main_heading[index].innerHTML = dataGlobal[index].category;
-  }
-};
-
-//This function will update the Small Heading
-const Sub_head = () => {
-  for (let index = 0; index < dataGlobal.length; index++) {
-    sub_heading[index].innerHTML = dataGlobal[index].name;
-  }
-};
-
-//This function will update the images as extracted from the object
-const img_up = () => {
-  for (let index = 0; index < dataGlobal.length; index++) {
-    images[index].src = dataGlobal[index].image.desktop;
-  }
-};
-
-//This function will append quantity field to the existing objects
-const add_quantity = () => {
-  dataGlobal.forEach((number) => {
-    number.quantity = 0;
-  });
-};
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
