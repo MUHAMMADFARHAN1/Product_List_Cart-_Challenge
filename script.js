@@ -86,7 +86,9 @@ const Update_Cart = () => {};
 //This function will show the checkout screen on pressing confirm button
 const Check_out = () => {};
 
-/////////////////////////////////////////////Event Listeners on the Elements//////////////////////////////////////
+/////////////////////////////////////////////Event Listeners on the Elements/////////////////////////////////////////////////
+
+//The listener on cart button to change it
 const set_eventlistener_Click = () => {
   for (let index = 0; index < CartButtons.length; index++) {
     //images[index].src = dataGlobal[index].image.desktop;
@@ -100,6 +102,7 @@ const set_eventlistener_Click = () => {
   }
 };
 
+//The listener on cart button to change it
 const set_eventlistener_Mouseout = () => {
   for (let index = 0; index < CartButtons.length; index++) {
     //images[index].src = dataGlobal[index].image.desktop;
