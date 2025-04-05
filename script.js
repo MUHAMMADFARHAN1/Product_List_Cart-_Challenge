@@ -28,11 +28,17 @@ let Cart_Items = [];
 (async () => {
   await getData();
   console.log(dataGlobal);
+  add_quantity();
   get_selectors();
-  console.log(cost);
-  console.log(main_heading);
-  console.log(sub_heading);
+  // console.log(cost);
+  // console.log(main_heading);
+  // console.log(sub_heading);
   console.log(images);
+  img_up();
+  console.log(images);
+  cost_calc();
+  //  console.log(Cart_Count);;
+
   //Most of program logic will go here
 })();
 
@@ -43,6 +49,7 @@ const get_selectors = () => {
   main_heading = document.querySelectorAll(".Card_First_Heading");
   sub_heading = document.querySelectorAll(".title");
   images = document.querySelectorAll(".Food_Pics");
+  Cart_Count = document.querySelectorAll("#Your_Cart");
 };
 
 //This function will populate the cart array with data retrieved from Json
@@ -51,16 +58,33 @@ const get_selectors = () => {
 const Cart_Array_Update = () => {};
 
 // This function will change the cost as per JSON
-const cost_calc = () => {};
+const cost_calc = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    //We need to put if condition here with modulo operator
+    cost[index].innerHTML = `$${dataGlobal[index].price}`;
+  }
+};
 
 //This function will update the Main Heading
-const Main_head = () => {};
+const Main_head = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    main_heading[index].innerHTML = dataGlobal[index].category;
+  }
+};
 
 //This function will update the Small Heading
-const Sub_head = () => {};
+const Sub_head = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    sub_heading[index].innerHTML = dataGlobal[index].name;
+  }
+};
 
-//This function will update the images
-const img_up = () => {};
+//This function will update the images as extracted from the object
+const img_up = () => {
+  for (let index = 0; index < dataGlobal.length; index++) {
+    images[index].src = dataGlobal[index].image.desktop;
+  }
+};
 
 //This function will update the number of items in the main cart
 const Cart_Number = () => {};
@@ -74,11 +98,16 @@ const Update_Cart = () => {};
 //This function will show the checkout screen on pressing confirm button
 const Check_out = () => {};
 
+//This function will append quantity field to the existing objects
+const add_quantity = () => {
+  dataGlobal.forEach((number) => {
+    number.quantity = 0;
+  });
+};
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //console.log(array[0]);
-
-//to pass parameter we need to use concept of anonymous functions here
 
 // function changeDisplay(button) {
 //   //button.style.backgroundcolor = "red";
@@ -132,4 +161,10 @@ const change_button = (CartButton) => {
  "p"
         ).innerText = `Button has been clicked ${index} times`;
 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
+*/
+
+/*
+Notes: 
+//to pass parameter we need to use concept of anonymous functions here
+
 */
