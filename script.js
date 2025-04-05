@@ -35,6 +35,8 @@ let total = 0;
 
 //This number is used to manage the tab states
 let number;
+
+let quatity = 0;
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
 //Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -43,9 +45,11 @@ let number;
   await getData();
   console.log(dataGlobal);
   get_selectors();
+  console.log(CartButtons);
   Cart_Array_Update();
   Cart_Number();
   Cart_Empty();
+  set_eventlisteners();
 
   //Most of program logic will go here
 })();
@@ -59,6 +63,19 @@ const get_selectors = () => {
   images = document.querySelectorAll(".Food_Pics");
   Cart_Count = document.querySelectorAll("#Cart_Num");
   CartButtons = document.querySelectorAll(".Click_Button");
+};
+
+const set_eventlisteners = () => {
+  for (let index = 0; index < CartButtons.length; index++) {
+    //images[index].src = dataGlobal[index].image.desktop;
+    CartButtons[index].addEventListener("mouseover", () => {
+      CartButtons[index].style.backgroundColor = "red";
+      CartButtons[index].innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
+        quatity[0] +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>';
+    });
+  }
 };
 
 //This function will update the number of items in the main cart
