@@ -1,7 +1,6 @@
 //Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects
 
 //////Fetch Operation//////////////
-
 let dataGlobal;
 
 const getData = async () => {
@@ -29,12 +28,22 @@ let Cart_Items = [];
 (async () => {
   await getData();
   console.log(dataGlobal);
+  get_selectors();
+  console.log(cost);
+  console.log(main_heading);
+  console.log(sub_heading);
+  console.log(images);
   //Most of program logic will go here
 })();
 
 /////////////////////////////////////////////////////////////////////////////Auxillary Functions///////////////////////////////////////////////////////////
 //This function will retrieve all the selectors
-const get_selectors = () => {};
+const get_selectors = () => {
+  cost = document.querySelectorAll(".Cost");
+  main_heading = document.querySelectorAll(".Card_First_Heading");
+  sub_heading = document.querySelectorAll(".title");
+  images = document.querySelectorAll(".Food_Pics");
+};
 
 //This function will populate the cart array with data retrieved from Json
 //It will also add a new field of quantity in the array generated
