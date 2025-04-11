@@ -122,9 +122,9 @@ const set_eventlistener_Mouseout = () => {
 //https://www.w3schools.com/js/js_htmldom_nodes.asp from here syntax and notes
 const Cart_Empty = () => {
   let cart_children = document.getElementById("Empty_Cart");
-  cart_children.style.display = "none";
+  // cart_children.style.display = "none";
   let cart_text = document.getElementById("Empty_Display");
-  cart_text.style.display = "none";
+  // cart_text.style.display = "none";
 
   // cart_text.remove();
   // cart_children.remove();
