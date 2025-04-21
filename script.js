@@ -1,6 +1,9 @@
 //Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects.
 //Object will be passed implciitly and will also capture control staructure and states in the code.
 // event object capture event state, DOM is also an objectcrepresentation that can be manipulated, json objects communicate, and also we can have custom objects with arrays to hold program and business logic state.
+// There are two ways of rendering the display for cart section:
+//1. use HTML based shadow DOM to create elements in advance and render them with javascript, With DOM elemnt creation and attachment.
+//2. use Template strings based template to generate and attach nodes on the go.
 ////////////////////////////////////////////////////////////////////////Fetch Operation////////////////////////////////////////////
 //This array will represent the global state of the items and is retrieved as JSON from the server
 let dataGlobal;
