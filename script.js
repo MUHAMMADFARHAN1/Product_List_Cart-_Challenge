@@ -34,6 +34,7 @@ let CartButtons;
 let Cart_Count;
 
 //This array will hold all the objects representing each image
+// It might not be needed in global state scenario
 let Cart_Items = [];
 
 //This number represents the total nuber of items in the cart
