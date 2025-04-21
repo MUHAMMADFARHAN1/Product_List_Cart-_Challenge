@@ -1,5 +1,6 @@
 //Javascript will be used here in all three paradigms: Imperative, Event driven and functional with objects.
 //Object will be passed implciitly and will also capture control staructure and states in the code.
+// event object capture event state, DOM is also an objectcrepresentation that can be manipulated, json objects communicate, and also we can have custom objects with arrays to hold program and business logic state.
 ////////////////////////////////////////////////////////////////////////Fetch Operation////////////////////////////////////////////
 //This array will represent the global state of the items and is retrieved as JSON from the server
 let dataGlobal;
