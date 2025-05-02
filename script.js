@@ -274,7 +274,7 @@ const Template_Confirmation = `<div style="display: flex; flex-direction: row; p
   </svg>
   This is a carbon neutral delievery.
 </p>
-</div>
+
 <div style="padding: 20px; background-color: hsl(20, 50%, 98%);">
 <button
   style="
@@ -289,6 +289,7 @@ const Template_Confirmation = `<div style="display: flex; flex-direction: row; p
 >
   Confirmation
 </button>
+</div>
 </div>`;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
