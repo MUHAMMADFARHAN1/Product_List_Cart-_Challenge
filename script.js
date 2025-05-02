@@ -186,32 +186,29 @@ const Cart_textupdated = () => {
 
   switch (latest_element) {
     case 0:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Waffle with Berries";
     case 1:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Vanilla Bean Crème Brûlée";
     case 2:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Macaron Mix of Five";
 
     case 3:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Classic Tiramisu";
 
     case 4:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Pistachio Baklava";
 
     case 5:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Lemon Meringue Pie";
 
     case 6:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Red Velvet Cake";
 
     case 7:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Salted Caramel Brownie";
 
     case 8:
-      product_name.innerHTML = "sdfdsfdsfssd";
-
-    case 9:
-      product_name.innerHTML = "sdfdsfdsfssd";
+      product_name.innerHTML = "Vanilla Panna Cotta";
 
     default:
   }
