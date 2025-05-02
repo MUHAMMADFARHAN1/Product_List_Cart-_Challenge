@@ -212,11 +212,11 @@ const img_up = () => {
 };
 
 //This function will append quantity field to the existing objects
-const add_quantity = () => {
-  dataGlobal.forEach((number) => {
-    number.quantity = 0;
-  });
-};
+// const add_quantity = () => {
+//   dataGlobal.forEach((number) => {
+//     number.quantity = 0;
+//   });
+// };
 
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
 // Ways of appending template string ina text: https://stackoverflow.com/questions/54618582/appending-a-template-string
