@@ -187,37 +187,46 @@ const Cart_textupdated = () => {
 
   switch (latest_element) {
     case 0:
-      product_name.innerHTML = "Waffle with Berries";
+      product_name.innerHTML = dataGlobal[0].name;
+      product_cost.innerHTML = dataGlobal[0].price;
       break;
     case 1:
-      product_name.innerHTML = "Vanilla Bean Crème Brûlée";
+      product_name.innerHTML = dataGlobal[1].name;
+      product_cost.innerHTML = dataGlobal[1].price;
       break;
     case 2:
-      product_name.innerHTML = "Macaron Mix of Five";
+      product_name.innerHTML = dataGlobal[2].name;
+      product_cost.innerHTML = dataGlobal[2].price;
       break;
 
     case 3:
-      product_name.innerHTML = "Classic Tiramisu";
+      product_name.innerHTML = dataGlobal[3].name;
+      product_cost.innerHTML = dataGlobal[3].price;
       break;
 
     case 4:
-      product_name.innerHTML = "Pistachio Baklava";
+      product_name.innerHTML = dataGlobal[4].name;
+      product_cost.innerHTML = dataGlobal[4].price;
       break;
 
     case 5:
-      product_name.innerHTML = "Lemon Meringue Pie";
+      product_name.innerHTML = dataGlobal[5].name;
+      product_cost.innerHTML = dataGlobal[5].price;
       break;
 
     case 6:
-      product_name.innerHTML = "Red Velvet Cake";
+      product_name.innerHTML = dataGlobal[6].name;
+      product_cost.innerHTML = dataGlobal[6].price;
       break;
 
     case 7:
-      product_name.innerHTML = "Salted Caramel Brownie";
+      product_name.innerHTML = dataGlobal[7].name;
+      product_cost.innerHTML = dataGlobal[7].price;
       break;
 
     case 8:
-      product_name.innerHTML = "Vanilla Panna Cotta";
+      product_name.innerHTML = dataGlobal[8].name;
+      product_cost.innerHTML = dataGlobal[8].price;
       break;
 
     default:
