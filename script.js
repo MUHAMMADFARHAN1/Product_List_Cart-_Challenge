@@ -117,7 +117,7 @@ const set_eventlistener_Click = () => {
         CartButtons[index].style.backgroundColor = "red";
         CartButtons[index].innerHTML =
           '<button style = "background-color: red; padding-top: 5px;border: none; display:inline; padding-left: 20px; padding-right: 20px">  <svg style = "margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
-          quantity[0] +
+          quantity[index] +
           '<svg style = "margin-bottom: 1px" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg> </button>';
         //here an implicit argument needs to be send to increment the count
         cart_state[index] = 1;
