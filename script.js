@@ -49,6 +49,11 @@ let quatity = 0;
 //Cart number of itme array
 let quantity = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+//Cart active
+let cart_state = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+//ask omar why are the appended attributes not type casted here
+
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
 //Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -103,13 +108,16 @@ const set_eventlistener_Click = () => {
   for (let index = 0; index < CartButtons.length; index++) {
     //images[index].src = dataGlobal[index].image.desktop;
     CartButtons[index].addEventListener("click", () => {
-      CartButtons[index].style.backgroundColor = "red";
-      CartButtons[index].innerHTML =
-        '<button style = "background-color: red; padding-top: 5px;border: none; display:inline; padding-left: 20px; padding-right: 20px">  <svg style = "margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
-        quantity[0] +
-        '<svg style = "margin-bottom: 1px" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg> </button>';
-      //here an implicit argument needs to be send to increment the count
-      Cart_Empty();
+      if (cart_state[index] == 0) {
+        CartButtons[index].style.backgroundColor = "red";
+        CartButtons[index].innerHTML =
+          '<button style = "background-color: red; padding-top: 5px;border: none; display:inline; padding-left: 20px; padding-right: 20px">  <svg style = "margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
+          quantity[0] +
+          '<svg style = "margin-bottom: 1px" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg> </button>';
+        //here an implicit argument needs to be send to increment the count
+        Cart_Empty();
+        cart_state[index] = 1;
+      }
     });
   }
 };
@@ -242,11 +250,11 @@ const Additional_Tab = `<div id="tab_${number}">
 </div>`;
 
 //This template contains Total cost, neutral delievery and Confirmation button
-const Template_Confirmation = `<div style="display: flex; flex-direction: row; padding-left: 15px">
+const Template_Confirmation = `<div style="display: flex; flex-direction: row; padding-left: 15px; background-color: hsl(20, 50%, 98%);">
 <p>Cost</p>
 <p style="margin-left: 180px" id="Total_Cost">Dollar</p>
 </div>
-<div style="padding-left: 15px; margin-top: -15px">
+<div style="padding-left: 15px; margin-top: -15px; background-color: hsl(20, 50%, 98%);">
 <p style="background-color: hsl(13, 31%, 94%); margin-right: 25px">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +275,7 @@ const Template_Confirmation = `<div style="display: flex; flex-direction: row; p
   This is a carbon neutral delievery.
 </p>
 </div>
-<div style="padding: 20px">
+<div style="padding: 20px; background-color: hsl(20, 50%, 98%);">
 <button
   style="
     padding: 15px 80px 15px 80px;
