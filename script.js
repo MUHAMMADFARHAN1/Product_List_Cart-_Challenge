@@ -174,7 +174,7 @@ const Cart_Empty = () => {
 const Cart_init = () => {};
 
 const Cart_textupdated = () => {
-  let latest_element = cart_seq.length - 1;
+  let latest_element = cart_seq[cart_seq.length - 1];
 
   let product_name_string = "#" + "item_" + number;
   let product_price_string = "#" + "cost_" + number;
@@ -275,6 +275,8 @@ const add_quantity = () => {
 
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
 // Ways of appending template string ina text: https://stackoverflow.com/questions/54618582/appending-a-template-string
+
+// https://stackoverflow.com/questions/51329080/how-can-i-update-an-object-value-which-uses-a-template-literal-in-javascript
 
 //This template contains main flexbox with a column display to be used
 let const_tab = (num) => {
