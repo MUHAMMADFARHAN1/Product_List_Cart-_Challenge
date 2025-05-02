@@ -90,7 +90,8 @@ const get_selectors = () => {
 //This function will update the number of items in the main cart
 const Cart_Number = () => {
   for (let index = 0; index < dataGlobal.length; index++) {
-    total += dataGlobal[index].quantity;
+    // total += dataGlobal[index].quantity[index];
+    total += quantity[index];
   }
   Cart_Num.innerHTML = `Your Cart&nbsp(${total})`;
 };
@@ -123,7 +124,7 @@ const set_eventlistener_Click = () => {
         cart_seq.push(index);
       }
     });
-    //console.log(cart_seq);
+    console.log(cart_seq);
   }
 };
 
@@ -212,11 +213,11 @@ const img_up = () => {
 };
 
 //This function will append quantity field to the existing objects
-// const add_quantity = () => {
-//   dataGlobal.forEach((number) => {
-//     number.quantity = 0;
-//   });
-// };
+const add_quantity = () => {
+  dataGlobal.forEach((number) => {
+    number.quantity = 0;
+  });
+};
 
 ////////////////////////////////////////////////////////////////////////////HTML CSS Templates///////////////////////////////////////////////////////////////
 // Ways of appending template string ina text: https://stackoverflow.com/questions/54618582/appending-a-template-string
