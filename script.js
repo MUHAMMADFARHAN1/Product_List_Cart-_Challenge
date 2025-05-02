@@ -97,13 +97,13 @@ const Cart_Number = () => {
 };
 
 //This function will trigger the event detection on the buttons
-const Button_Detection = () => {};
+//const Button_Detection = () => {};
 
 //This function will add the items onto the cart or increase them
-const Update_Cart = () => {};
+//const Update_Cart = () => {};
 
 //This function will show the checkout screen on pressing confirm button
-const Check_out = () => {};
+//const Check_out = () => {};
 
 /////////////////////////////////////////////Event Listeners on the Elements/////////////////////////////////////////////////
 
@@ -177,7 +177,7 @@ const Cart_Empty = () => {
 };
 
 //This function will add the first tab in the cart
-const Cart_init = () => {};
+//const Cart_init = () => {};
 
 const Cart_textupdated = () => {
   let latest_element = cart_seq[cart_seq.length - 1];
