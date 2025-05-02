@@ -137,15 +137,17 @@ const Cart_Empty = () => {
   let cart_text = document.getElementById("Empty_Display");
   cart_text.style.display = "none";
 
+  if (total == 0) {
+    cart_children.insertAdjacentHTML("afterend", Template_Confirmation);
+  }
+  total++;
+
   if (number < 9) {
     cart_children.insertAdjacentHTML("afterend", cost_tab);
     number++;
   }
 
-  if (total == 0) {
-    cart_children.insertAdjacentHTML("afterend", Template_Confirmation);
-  }
-  total++;
+  console.log(number);
 
   // cart_text.remove();
   // cart_children.remove();
