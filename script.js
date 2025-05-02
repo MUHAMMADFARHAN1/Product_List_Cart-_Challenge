@@ -52,6 +52,8 @@ let quantity = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 //Cart active
 let cart_state = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+//cart 
+
 //ask omar why are the appended attributes not type casted here
 
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
@@ -147,8 +149,8 @@ const Cart_Empty = () => {
 
   if (total == 0) {
     cart_children.insertAdjacentHTML("afterend", Template_Confirmation);
+    total++;
   }
-  total++;
 
   if (number < 9) {
     cart_children.insertAdjacentHTML("afterend", cost_tab);
@@ -218,6 +220,7 @@ const add_quantity = () => {
 
 //This template contains main flexbox with a column display to be used
 let cost_tab = `<div
+id="tab_${number}"
 style="
   display: flex;
   flex-direction: column;
@@ -225,13 +228,13 @@ style="
   background-color: hsl(20, 50%, 98%);
 "
 >
-<div id="tab_${number}">
+<div >
   <div style="display: flex; flex-direction: row; padding-left: 15px">
     <div>
-      <p>Classic Tiramisu</p>
-      <p style="margin-top: -10px">Cost</p>
+      <p id="item_${number}">Classic Tiramisu</p>
+      <p id="cost_${number}" style="margin-top: -10px">Cost</p>
     </div>
-    <p id="cross_${number}" style="margin-left: 150px"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg></p>
+    <p style="margin-left: 150px"><svg id="cross_${number}" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg></p>
   </div>
   <hr style="width: 290px; margin-top: -5px" />
 </div>
