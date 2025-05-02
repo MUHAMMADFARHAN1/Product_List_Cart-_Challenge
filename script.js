@@ -183,32 +183,42 @@ const Cart_textupdated = () => {
   let product_cost = document.querySelector(product_price_string);
 
   console.log(product_name_string);
+  console.log(latest_element);
 
   switch (latest_element) {
     case 0:
       product_name.innerHTML = "Waffle with Berries";
+      break;
     case 1:
       product_name.innerHTML = "Vanilla Bean Crème Brûlée";
+      break;
     case 2:
       product_name.innerHTML = "Macaron Mix of Five";
+      break;
 
     case 3:
       product_name.innerHTML = "Classic Tiramisu";
+      break;
 
     case 4:
       product_name.innerHTML = "Pistachio Baklava";
+      break;
 
     case 5:
       product_name.innerHTML = "Lemon Meringue Pie";
+      break;
 
     case 6:
       product_name.innerHTML = "Red Velvet Cake";
+      break;
 
     case 7:
       product_name.innerHTML = "Salted Caramel Brownie";
+      break;
 
     case 8:
       product_name.innerHTML = "Vanilla Panna Cotta";
+      break;
 
     default:
   }
