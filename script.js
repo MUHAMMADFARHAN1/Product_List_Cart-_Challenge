@@ -159,6 +159,7 @@ const Cart_Empty = () => {
   if (number < 9) {
     cart_children.insertAdjacentHTML("afterend", cost_tab);
     number++;
+    Cart_textupdated();
   }
 
   console.log(number);
@@ -169,6 +170,50 @@ const Cart_Empty = () => {
 
 //This function will add the first tab in the cart
 const Cart_init = () => {};
+
+const Cart_textupdated = () => {
+  let latest_element = cart_seq.length - 1;
+
+  let product_name_string = "#" + "item_" + number;
+  let product_price_string = "#" + "cost_" + number;
+
+  let product_name = document.querySelector(product_name_string);
+  let product_cost = document.querySelector(product_price_string);
+
+  console.log(product_name_string);
+
+  switch (latest_element) {
+    case 0:
+      product_name.innerHTML = "sdfdsfdsfssd";
+    case 1:
+      product_name.innerHTML = "sdfdsfdsfssd";
+    case 2:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 3:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 4:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 5:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 6:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 7:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 8:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    case 9:
+      product_name.innerHTML = "sdfdsfdsfssd";
+
+    default:
+  }
+};
 
 ////////////////////////////////Page update with JSON template/////////////////////////////////////////
 
