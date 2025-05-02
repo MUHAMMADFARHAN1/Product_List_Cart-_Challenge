@@ -52,7 +52,8 @@ let quantity = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 //Cart active
 let cart_state = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-//cart 
+//cart seqeune capture
+let cart_seq = [];
 
 //ask omar why are the appended attributes not type casted here
 
@@ -119,8 +120,10 @@ const set_eventlistener_Click = () => {
         //here an implicit argument needs to be send to increment the count
         Cart_Empty();
         cart_state[index] = 1;
+        cart_seq.push(index);
       }
     });
+    //console.log(cart_seq);
   }
 };
 
