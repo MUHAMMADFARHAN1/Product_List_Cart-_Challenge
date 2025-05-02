@@ -53,7 +53,7 @@ let quatity = 0;
   Cart_Number();
   Cart_Empty();
   set_eventlistener_Click();
-  set_eventlistener_Mouseout();
+  // set_eventlistener_Mouseout();
 
   //Most of program logic will go here
 })();
@@ -95,12 +95,13 @@ const set_eventlistener_Click = () => {
     CartButtons[index].addEventListener("click", () => {
       CartButtons[index].style.backgroundColor = "red";
       CartButtons[index].innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
+        '<button style = "background-color: red; padding-top: 5px;border: none">  <svg style = "margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
         quatity[0] +
-        '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>';
+        '<svg style = "margin-bottom: 1px" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg> </button>';
       //here an implicit argument needs to be send to increment the count
     });
   }
+  Cart_Empty();
 };
 
 //The listener on cart button to change it
@@ -122,9 +123,9 @@ const set_eventlistener_Mouseout = () => {
 //https://www.w3schools.com/js/js_htmldom_nodes.asp from here syntax and notes
 const Cart_Empty = () => {
   let cart_children = document.getElementById("Empty_Cart");
-  // cart_children.style.display = "none";
+  cart_children.style.display = "none";
   let cart_text = document.getElementById("Empty_Display");
-  // cart_text.style.display = "none";
+  cart_text.style.display = "none";
 
   // cart_text.remove();
   // cart_children.remove();
