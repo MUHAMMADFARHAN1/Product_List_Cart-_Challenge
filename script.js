@@ -41,10 +41,14 @@ let Cart_Items = [];
 let total = 0;
 
 //This number is used to manage the template states
-let number;
+let number = 0;
 
 //Temporary variable to capture the number event on the buttons
 let quatity = 0;
+
+//Cart number of itme array
+let quantity = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 /////////////////////////////////////////////////////////////////////////////Event Loop//////////////////////////////////////////////////////////////////////
 
 //Here we have https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -53,10 +57,11 @@ let quatity = 0;
   await getData();
   console.log(dataGlobal);
   get_selectors();
+  add_quantity();
   console.log(CartButtons);
   Cart_Array_Update();
   Cart_Number();
-  Cart_Empty();
+  //Cart_Empty();
   set_eventlistener_Click();
   // set_eventlistener_Mouseout();
 
@@ -100,13 +105,13 @@ const set_eventlistener_Click = () => {
     CartButtons[index].addEventListener("click", () => {
       CartButtons[index].style.backgroundColor = "red";
       CartButtons[index].innerHTML =
-        '<button style = "background-color: red; padding-top: 5px;border: none">  <svg style = "margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
-        quatity[0] +
+        '<button style = "background-color: red; padding-top: 5px;border: none; display:inline; padding-left: 20px; padding-right: 20px">  <svg style = "margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>' +
+        quantity[0] +
         '<svg style = "margin-bottom: 1px" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg> </button>';
       //here an implicit argument needs to be send to increment the count
+      Cart_Empty();
     });
   }
-  Cart_Empty();
 };
 
 //The listener on cart button to change it
@@ -131,6 +136,11 @@ const Cart_Empty = () => {
   cart_children.style.display = "none";
   let cart_text = document.getElementById("Empty_Display");
   cart_text.style.display = "none";
+
+  if (number < 9) {
+    cart_children.insertAdjacentHTML("afterend", cost_tab);
+    number++;
+  }
 
   // cart_text.remove();
   // cart_children.remove();
