@@ -142,6 +142,11 @@ const Cart_Empty = () => {
     number++;
   }
 
+  if (total == 0) {
+    cart_children.insertAdjacentHTML("afterend", Template_Confirmation);
+  }
+  total++;
+
   // cart_text.remove();
   // cart_children.remove();
 };
